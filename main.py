@@ -28,3 +28,4 @@ async def get_vip_status(client_name: str):
 #sudo apt install uvicorn
 #uvicorn main:app --host 0.0.0.0 --port 8080
 #kill -9 $(ps -ef | grep uvicorn  | awk '{print $2}')
+#git clone https://github.com/CHES123/tz_24_api.git --branch master
