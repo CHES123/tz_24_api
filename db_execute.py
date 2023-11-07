@@ -1,5 +1,5 @@
 import psycopg2
-from connect_config import user,password,host,port,database
+from connect_config import user, password, host, port, database #user,password,host,port,database
 import datetime
 
 def exec_sql(query):
