@@ -18,6 +18,20 @@
     sudo apt install uvicorn
 10 Запускаем сервис 
     uvicorn main:app --host 0.0.0.0 --port 8080
-11 тестируем api
-         
-
+11 тестируем 
+    Список всех номеров 
+        "http://0.0.0.0:8080/list_apart"
+    Список свободных номеров на дату 
+        "http://0.0.0.0:8080/list_free_apart?beg_date=01.01.2023&end_date=02.01.2023"
+    Бронирование номеров указываем название номера, имя клиента, даты и виа статус клиента
+        "http://0.0.0.0:8080/order_apart?apartment_name=apartment1&client_name=client1&beg_date=01.01.2023&end_date=02.01.2023&vip_status=1"
+        "http://0.0.0.0:8080/order_apart?apartment_name=apartment2&client_name=client2&beg_date=15.01.2023&end_date=20.01.2023&vip_status=1"
+        "http://0.0.0.0:8080/order_apart?apartment_name=apartment3&client_name=client3&beg_date=15.01.2023&end_date=20.01.2023&vip_status=1"
+        Пересечение дат бронирование одного номера для разных клиентов(если забронировано то возвращает id забронированного номера )
+        "http://0.0.0.0:8080/order_apart?apartment_name=apartment3&client_name=client4&beg_date=10.01.2023&end_date=15.01.2023&vip_status=1"
+    Список свободных номеров на дату (должно вернуть меньше значений)
+        "http://0.0.0.0:8080/list_free_apart?beg_date=01.01.2023&end_date=02.01.2023"
+    Удаление брони (нужно указать id заказа)
+        "http://0.0.0.0:8080/miss_order?order_id=163"   
+    Получение ВИП статуса клиента(указываем имя)
+        "http://0.0.0.0:8080/vip_status?client_name=client1"      
