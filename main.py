@@ -23,7 +23,8 @@ async def miss_order(order_id: int):
 async def get_vip_status(client_name: str):
     return f_get_vip_status(client_name)
 
-
+#source venv/bin/activate
 #pip install uvicorn
+#sudo apt install uvicorn
 #uvicorn main:app --host 0.0.0.0 --port 8080
 #kill -9 $(ps -ef | grep uvicorn  | awk '{print $2}')
