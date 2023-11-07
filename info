@@ -1,0 +1,23 @@
+1 Устанавливаем postgressql если не установлено
+    sudo apt-get -y install postgresql    
+2 Войти в утилиту psql
+    sudo -u postgres psql    
+3 Выполнить скрипт sql     
+    \i путь\dump.sql
+4 Создаем копию репозитория
+    git clone https://github.com/CHES123/tz_24_api.git --branch master
+5 Заходим в каталог 
+    cd tz_24_api 
+6 Создаем виртуальное окружение 
+    python -m venv venv
+7 Активируем окружене 
+    source/venv/bin/activate
+8 Устанавливаем зависимости 
+    pip install -r requirements.txt
+9 Устанавливаем Uvicorn
+    sudo apt install uvicorn
+10 Запускаем сервис 
+    uvicorn main:app --host 0.0.0.0 --port 8080
+11 тестируем api
+         
+
